@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">UIDemo</string>
+    <string name="btn1">左</string>
+    <string name="btn2">右</string>
+    <string name="sw1">开关</string>
+    <string name="pbinput">请输入数值</string>
+    <string name="pbbtn">确定</string>
+    <string name="androidlogon">Android</string>
+    <string name="applelogo">Apple</string>
+    <string name="display">display</string>
+    <string name="cb1">语文</string>
+    <string name="cb2">数学</string>
+    <string name="cb3">英语</string>
+    <string name="starcontent">评分</string>
+</resources>
