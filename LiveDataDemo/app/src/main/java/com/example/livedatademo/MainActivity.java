@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         imageButtonLike = findViewById(R.id.imageButton);
         imageButtonDislike = findViewById(R.id.imageButton2);
 
-        viewModelWithLiveData = new ViewModelProvider(this).get(ViewMode lWithLiveData.class);
+        viewModelWithLiveData = new ViewModelProvider(this).get(ViewModelWithLiveData.class);
 
         viewModelWithLiveData.getLikedNumber().observe(this, new Observer<Integer>() {
             @Override
