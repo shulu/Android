@@ -1,18 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+        <variable
+            name="data"
+            type="com.example.basketballcounter.MyViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+        app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/teamA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ateam"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.1"
+            app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl.v.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl.h.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <TextView
+            android:id="@+id/teamB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bteam"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl.h.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <TextView
+            android:id="@+id/scoreA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.teamACounter)}"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.2"
+            app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.1" />
+
+        <TextView
+            android:id="@+id/scoreB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.teamBCounter)}"
+            android:textColor="@color/teal_700"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl.h.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl.h.4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl.h.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80" />
+
+        <Button
+            android:id="@+id/plusA1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus1"
+            android:onClick="@{()->data.setCountA(1)}"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.3"
+            app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.2" />
+
+        <Button
+            android:id="@+id/plusB1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus1"
+            android:onClick="@{()->data.setCountB(1)}"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.2" />
+
+        <Button
+            android:id="@+id/plusA2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plu2"
+            android:onClick="@{()->data.setCountA(2)}"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.4"
+            app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.3" />
+
+        <Button
+            android:id="@+id/plusB2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plu2"
+            android:onClick="@{()->data.setCountB(2)}"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.3" />
+
+        <Button
+            android:id="@+id/plusA3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus3"
+            android:onClick="@{()->data.setCountA(3)}"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.5"
+            app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.4" />
+
+        <Button
+            android:id="@+id/plusB3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/plus3"
+            android:onClick="@{()->data.setCountB(3)}"
+            app:layout_constraintBottom_toTopOf="@+id/gl.h.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.4" />
+
+        <ImageButton
+            android:id="@+id/iib.back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
+            app:layout_constraintHorizontal_bias="0.78"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.5"
+            app:layout_constraintVertical_bias="0.311"
+            app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+        <ImageButton
+            android:id="@+id/ib.refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/refresh"
+            android:onClick="@{()->data.clearScore()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.221"
+            app:layout_constraintStart_toStartOf="@+id/gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/gl.h.5"
+            app:layout_constraintVertical_bias="0.311"
+            app:srcCompat="@drawable/baseline_refresh_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

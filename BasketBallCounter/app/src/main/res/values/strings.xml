@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BasketBallCounter</string>
+    <string name="ateam">A Team</string>
+    <string name="bteam">B Team</string>
+    <string name="plus1">+ 1</string>
+    <string name="plu2">+ 2</string>
+    <string name="plus3">+ 3</string>
+    <string name="refresh">refresh</string>
+    <string name="back">back</string>
 </resources>
