@@ -16,14 +16,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //SharedPreferences shp = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences shp = getSharedPreferences("MY_DATA", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = shp.edit();
-        editor.putInt("MY_DATA", 600);
-        editor.apply();
+        MyData myData = new MyData(getApplicationContext());
+        myData.number = 1000;
+        myData.save();
+        int x = myData.load();
 
-       //int x = shp.getInt("NUMBER", 0);
-        int x = shp.getInt("MY_DATA", 0);
+//        SharedPreferences shp = getPreferences(Context.MODE_PRIVATE);
+//        SharedPreferences shp = getSharedPreferences("MY_DATA", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = shp.edit();
+//        editor.putInt("MY_DATA", 600);
+//        editor.apply();
+//
+//       //int x = shp.getInt("NUMBER", 0);
+//        int x = shp.getInt("MY_DATA", 0);
 
         Log.d(TAG, "onCreate: "+x);
     }
