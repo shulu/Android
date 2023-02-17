@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ViewModelSP</string>
+    <string name="plus">+1</string>
+    <string name="minus1">- 1</string>
+    <string name="shp_name">SHP_NAME</string>
+    <string name="shp_key">SHP_KEY</string>
+</resources>
