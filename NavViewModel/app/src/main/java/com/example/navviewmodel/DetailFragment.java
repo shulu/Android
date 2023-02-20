@@ -2,11 +2,20 @@ package com.example.navviewmodel;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.navviewmodel.databinding.DetailBinding;
+import com.example.navviewmodel.databinding.MasterBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +32,8 @@ public class DetailFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    MyViewModel myViewModel;
 
     public DetailFragment() {
         // Required empty public constructor
@@ -59,6 +70,18 @@ public class DetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.detail, container, false);
+        myViewModel = new ViewModelProvider(requireActivity()).get(MyViewModel.class);
+        DetailBinding detailBinding =  DataBindingUtil.inflate(inflater, R.layout.detail, container, false);
+        detailBinding.setData(myViewModel);
+        detailBinding.setLifecycleOwner(requireActivity());
+        detailBinding.detailBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController controller = Navigation.findNavController(v);
+                controller.navigate(R.id.action_detailFragment_to_masterFragment);
+            }
+        });
+        return detailBinding.getRoot();
+        //return inflater.inflate(R.layout.detail, container, false);
     }
 }
