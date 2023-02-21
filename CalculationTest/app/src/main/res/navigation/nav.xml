@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/fragment_win">
+
+    <fragment
+        android:id="@+id/fragment_lose"
+        android:name="com.example.calculationtest.fragment_lose"
+        android:label="fragment_lose"
+        tools:layout="@layout/fragment_lose" >
+        <action
+            android:id="@+id/action_fragment_lose_to_fragment_title"
+            app:destination="@id/fragment_title" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_question"
+        android:name="com.example.calculationtest.fragment_question"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" >
+        <action
+            android:id="@+id/action_fragment_question_to_fragment_win"
+            app:destination="@id/fragment_win" />
+        <action
+            android:id="@+id/action_fragment_question_to_fragment_lose"
+            app:destination="@id/fragment_lose" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_title"
+        android:name="com.example.calculationtest.fragment_title"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_fragment_title_to_fragment_question"
+            app:destination="@id/fragment_question" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_win"
+        android:name="com.example.calculationtest.fragment_win"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_fragment_win_to_fragment_title"
+            app:destination="@id/fragment_title" />
+    </fragment>
+</navigation>
