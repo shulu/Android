@@ -2,11 +2,19 @@ package com.example.calculationtest;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.calculationtest.databinding.FragmentLoseBinding;
+import com.example.calculationtest.databinding.FragmentTitleBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,9 +64,24 @@ public class fragment_lose extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MyViewModel myViewModel;
+        myViewModel = new ViewModelProvider(requireActivity()).get(MyViewModel.class);
+        FragmentLoseBinding fragmentLoseBinding;
+        fragmentLoseBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_lose, container, false);
+        fragmentLoseBinding.setData(myViewModel);
+        fragmentLoseBinding.setLifecycleOwner(requireActivity());
+
+        fragmentLoseBinding.loseBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavController controller = Navigation.findNavController(view);
+                controller.navigate(R.id.action_fragment_lose_to_fragment_title);
+            }
+        });
+        return fragmentLoseBinding.getRoot();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lose, container, false);
+        //return inflater.inflate(R.layout.fragment_lose, container, false);
     }
 }

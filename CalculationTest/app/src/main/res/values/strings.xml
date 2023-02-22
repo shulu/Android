@@ -3,8 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="high_score">High Score:%d</string>
-    <string name="mouse_cal">Calculate Direct</string>
-    <string name="title_image">titile.image</string>
+    <string name="mouse_cal">Calculate Test</string>
+    <string name="title_image">title.image</string>
     <string name="title_start_btn">Start</string>
     <string name="q_now_score">Score:%d</string>
     <string name="q_tv_num_1">19</string>
@@ -32,4 +32,7 @@
     <string name="lose_image">lose image</string>
     <string name="win_message">Challenge Success!</string>
     <string name="q_tv_u_answer">Your Answer :</string>
+    <string name="quit_dialog_title">Are You Sure to quit?</string>
+    <string name="dialog_positive_message">OK</string>
+    <string name="dialog_negative_message">Cancel</string>
 </resources>

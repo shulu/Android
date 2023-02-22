@@ -99,8 +99,8 @@ public class MyViewModel extends AndroidViewModel {
         getCurrentScore().setValue(getCurrentScore().getValue() + 1);
         if (getCurrentScore().getValue() > getHighScore().getValue()){
             getHighScore().setValue(getCurrentScore().getValue());
+            WIN_FLAG = true;
         }
-        WIN_FLAG = true;
         genQuestion();
     }
 }

@@ -112,7 +112,7 @@ public class fragment_question extends Fragment {
                 if (Integer.valueOf(stringBuilder.toString()).intValue() == myViewModel.getAnswer().getValue()){
                     myViewModel.answerCorrect();
                     stringBuilder.setLength(0);
-                    stringBuilder.append(getString(R.string.q_tv_tips));
+                    fragmentQuestionBinding.qTvTips.setText(R.string.q_tv_tips);
                 }else {
                     NavController controller = Navigation.findNavController(v);
                     if (myViewModel.WIN_FLAG){
