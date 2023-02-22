@@ -1,304 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment_question">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+    <data>
+        <variable
+            name="data"
+            type="com.example.calculationtest.MyViewModel" />
+    </data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment_question">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.30" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.40" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.30" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.40" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.80" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/q.gl.h.9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.h.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
 
-    <TextView
-        android:id="@+id/q.tv.score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_now_score"
-        android:textSize="@dimen/mid_font"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.v.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
 
-    <TextView
-        android:id="@+id/q.tv.num.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_tv_num_1"
-        android:textSize="@dimen/huge_font"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.3"
-        app:layout_constraintEnd_toStartOf="@+id/q.tv.op.1"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.2" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/q.gl.v.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
 
-    <TextView
-        android:id="@+id/q.tv.op.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_tv_op_1"
-        android:textSize="@dimen/huge_font"
-        app:layout_constraintBottom_toBottomOf="@+id/q.tv.num.1"
-        app:layout_constraintEnd_toStartOf="@+id/q.tv.num.2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.tv.num.1"
-        app:layout_constraintTop_toTopOf="@+id/q.tv.num.1" />
+        <TextView
+            android:id="@+id/q.tv.score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/q_now_score(data.getCurrentScore)}"
+            android:textSize="@dimen/mid_font"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.2"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.1"
+            tools:text="@string/q_now_score" />
 
-    <TextView
-        android:id="@+id/q.tv.num.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_tv_num_2"
-        android:textSize="@dimen/huge_font"
-        app:layout_constraintBottom_toBottomOf="@+id/q.tv.op.1"
-        app:layout_constraintEnd_toStartOf="@+id/q.tv.op.2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.tv.op.1"
-        app:layout_constraintTop_toTopOf="@+id/q.tv.op.1" />
+        <TextView
+            android:id="@+id/q.tv.num.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.leftNumber)}"
+            android:textSize="@dimen/huge_font"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.3"
+            app:layout_constraintEnd_toStartOf="@+id/q.tv.op.1"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.2"
+            tools:text="@string/q_tv_num_1" />
 
-    <TextView
-        android:id="@+id/q.tv.op.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_tv_op_2"
-        android:textSize="@dimen/huge_font"
-        app:layout_constraintBottom_toBottomOf="@+id/q.tv.num.2"
-        app:layout_constraintEnd_toStartOf="@+id/q.tv.answer"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.tv.num.2"
-        app:layout_constraintTop_toTopOf="@+id/q.tv.num.2" />
+        <TextView
+            android:id="@+id/q.tv.op.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{data.operator}"
+            android:textSize="@dimen/huge_font"
+            app:layout_constraintBottom_toBottomOf="@+id/q.tv.num.1"
+            app:layout_constraintEnd_toStartOf="@+id/q.tv.num.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.tv.num.1"
+            app:layout_constraintTop_toTopOf="@+id/q.tv.num.1"
+            tools:text="@string/q_tv_op_1" />
 
-    <TextView
-        android:id="@+id/q.tv.answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_tv_answer"
-        android:textSize="@dimen/huge_font"
-        app:layout_constraintBottom_toBottomOf="@+id/q.tv.op.2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.tv.op.2"
-        app:layout_constraintTop_toTopOf="@+id/q.tv.op.2" />
+        <TextView
+            android:id="@+id/q.tv.num.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(data.rightNumber)}"
+            android:textSize="@dimen/huge_font"
+            app:layout_constraintBottom_toBottomOf="@+id/q.tv.op.1"
+            app:layout_constraintEnd_toStartOf="@+id/q.tv.op.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.tv.op.1"
+            app:layout_constraintTop_toTopOf="@+id/q.tv.op.1"
+            tools:text="@string/q_tv_num_2" />
 
-    <TextView
-        android:id="@+id/q.tv.tips"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/q_tv_tips"
-        android:textSize="@dimen/mid_font"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.4"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.3" />
+        <TextView
+            android:id="@+id/q.tv.op.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_tv_op_2"
+            android:textSize="@dimen/huge_font"
+            app:layout_constraintBottom_toBottomOf="@+id/q.tv.num.2"
+            app:layout_constraintEnd_toStartOf="@+id/q.tv.answer"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.tv.num.2"
+            app:layout_constraintTop_toTopOf="@+id/q.tv.num.2" />
 
-    <Button
-        android:id="@+id/q.btn.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_2"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.1"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.1"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.1"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/q.tv.answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_tv_answer"
+            android:textSize="@dimen/huge_font"
+            app:layout_constraintBottom_toBottomOf="@+id/q.tv.op.2"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.tv.op.2"
+            app:layout_constraintTop_toTopOf="@+id/q.tv.op.2" />
 
-    <Button
-        android:id="@+id/q.btn.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_1"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.5"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.4"
-        app:layout_constraintVertical_bias="0.48" />
+        <TextView
+            android:id="@+id/q.tv.tips"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/q_tv_u_answer"
+            android:textSize="@dimen/mid_font"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.4"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.3" />
 
-    <Button
-        android:id="@+id/q.btn.3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_3"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.2"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.2"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.2"
-        app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/q.btn.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_2"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.1"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.1"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.1"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/q.btn.4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_4"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.6"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.5" />
+        <Button
+            android:id="@+id/q.btn.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_1"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.5"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.4"
+            app:layout_constraintVertical_bias="0.48" />
 
-    <Button
-        android:id="@+id/q.btn.5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_5"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.4"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.4"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.4" />
+        <Button
+            android:id="@+id/q.btn.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_3"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.2"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.2"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.2"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/q.btn.6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_6"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.5"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.5" />
+        <Button
+            android:id="@+id/q.btn.4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_4"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.6"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.5" />
 
-    <Button
-        android:id="@+id/q.btn.7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_7"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.7"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.6" />
+        <Button
+            android:id="@+id/q.btn.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_5"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.4"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.4"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.4" />
 
-    <Button
-        android:id="@+id/q.btn.8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_8"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.7"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.7"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.7" />
+        <Button
+            android:id="@+id/q.btn.6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_6"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.5"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.5"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.5" />
 
-    <Button
-        android:id="@+id/q.btn.9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_9"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.8"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.8"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.8" />
+        <Button
+            android:id="@+id/q.btn.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_7"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.7"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.6" />
 
-    <Button
-        android:id="@+id/q.btn.clear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_clear"
-        app:layout_constraintBottom_toTopOf="@+id/q.gl.h.8"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.0"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/q.gl.h.7" />
+        <Button
+            android:id="@+id/q.btn.8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_8"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.7"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.7"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.7" />
 
-    <Button
-        android:id="@+id/q.btn.0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_0"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.clear"
-        app:layout_constraintEnd_toStartOf="@+id/q.btn.submit"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.clear"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.clear" />
+        <Button
+            android:id="@+id/q.btn.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_9"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.8"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.8"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.8" />
 
-    <Button
-        android:id="@+id/q.btn.submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/q_btn_submit"
-        app:layout_constraintBottom_toBottomOf="@+id/q.btn.0"
-        app:layout_constraintEnd_toStartOf="@+id/guideline11"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/q.btn.0"
-        app:layout_constraintTop_toTopOf="@+id/q.btn.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/q.btn.clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_clear"
+            app:layout_constraintBottom_toTopOf="@+id/q.gl.h.8"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/q.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/q.gl.h.7" />
+
+        <Button
+            android:id="@+id/q.btn.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_0"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.clear"
+            app:layout_constraintEnd_toStartOf="@+id/q.btn.submit"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.clear"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.clear" />
+
+        <Button
+            android:id="@+id/q.btn.submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/q_btn_submit"
+            app:layout_constraintBottom_toBottomOf="@+id/q.btn.0"
+            app:layout_constraintEnd_toStartOf="@+id/q.gl.v.2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/q.btn.0"
+            app:layout_constraintTop_toTopOf="@+id/q.btn.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

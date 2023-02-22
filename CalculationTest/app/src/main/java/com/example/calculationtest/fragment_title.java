@@ -2,11 +2,18 @@ package com.example.calculationtest;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.calculationtest.databinding.FragmentTitleBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,9 +63,23 @@ public class fragment_title extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        MyViewModel myViewModel;
+        myViewModel = new ViewModelProvider(requireActivity()).get(MyViewModel.class);
+        FragmentTitleBinding fragmentTitleBinding;
+        fragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false);
+        fragmentTitleBinding.setData(myViewModel);
+        fragmentTitleBinding.setLifecycleOwner(requireActivity());
+        fragmentTitleBinding.titleBtnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_fragment_title_to_fragment_question);
+            }
+        });
+        return fragmentTitleBinding.getRoot();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_title, container, false);
+        //return inflater.inflate(R.layout.fragment_title, container, false);
     }
 }

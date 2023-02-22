@@ -31,4 +31,5 @@
     <string name="win_image">win image</string>
     <string name="lose_image">lose image</string>
     <string name="win_message">Challenge Success!</string>
+    <string name="q_tv_u_answer">Your Answer :</string>
 </resources>

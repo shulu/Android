@@ -1,101 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragment_lose">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.v.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+    <data>
+        <variable
+            name="data"
+            type="com.example.calculationtest.MyViewModel" />
+    </data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.v.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment_lose">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.h.1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.v.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.h.2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.v.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.h.3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.45" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.h.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.h.4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.h.2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/lose.gl.h.5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.91" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.h.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:src="@drawable/lose_baseline_mood_bad_24"
-        android:contentDescription="@string/lose_image"
-        app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.2"
-        app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
-        app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
-        app:layout_constraintTop_toTopOf="@+id/lose.gl.h.1" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.h.4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.55" />
 
-    <TextView
-        android:id="@+id/lose.tv.fail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lose_fail_msg"
-        android:textSize="@dimen/mid_font"
-        app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.3"
-        app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
-        app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
-        app:layout_constraintTop_toTopOf="@+id/lose.gl.h.2" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/lose.gl.h.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.91" />
 
-    <TextView
-        android:id="@+id/lose.tv.score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/challenge_score"
-        android:textSize="@dimen/mid_font"
-        app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.4"
-        app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
-        app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
-        app:layout_constraintTop_toTopOf="@+id/lose.gl.h.3" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/lose_baseline_mood_bad_24"
+            android:contentDescription="@string/lose_image"
+            app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.2"
+            app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
+            app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/lose.gl.h.1" />
 
-    <Button
-        android:id="@+id/lose.back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/challenge_back"
-        app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.5"
-        app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
-        app:layout_constraintTop_toTopOf="@+id/lose.gl.h.4" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/lose.tv.fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lose_fail_msg"
+            android:textSize="@dimen/mid_font"
+            app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.3"
+            app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
+            app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/lose.gl.h.2" />
+
+        <TextView
+            android:id="@+id/lose.tv.score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/challenge_score(data.currentScore)}"
+            android:textSize="@dimen/mid_font"
+            app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.4"
+            app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
+            app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/lose.gl.h.3"
+            tools:text="@string/challenge_score" />
+
+        <Button
+            android:id="@+id/lose.back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/challenge_back"
+            app:layout_constraintBottom_toTopOf="@+id/lose.gl.h.5"
+            app:layout_constraintEnd_toStartOf="@+id/lose.gl.v.2"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/lose.gl.v.1"
+            app:layout_constraintTop_toTopOf="@+id/lose.gl.h.4" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="data"
+            type="com.example.calculationtest.MyViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,13 +74,14 @@
             android:id="@+id/title.high.score"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/high_score"
+            android:text="@{@string/high_score(data.getHighScore)}"
             app:layout_constraintBottom_toTopOf="@+id/gl.h.3"
             app:layout_constraintEnd_toStartOf="@+id/gl.v.1"
             app:layout_constraintHorizontal_bias="0.919"
             app:layout_constraintStart_toStartOf="@+id/gl.v.2"
             app:layout_constraintTop_toTopOf="@+id/gl.h.2"
-            app:layout_constraintVertical_bias="0.588" />
+            app:layout_constraintVertical_bias="0.588"
+            tools:text="@string/high_score" />
 
         <TextView
             android:id="@+id/title.title"
