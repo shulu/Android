@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fragment_lose"
         android:name="com.example.calculationtest.fragment_lose"
-        android:label="lose"
+        android:label="@string/fragment_nav_lose"
         tools:layout="@layout/fragment_lose">
         <action
             android:id="@+id/action_fragment_lose_to_fragment_title"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/fragment_question"
         android:name="com.example.calculationtest.fragment_question"
-        android:label="Question"
+        android:label="@string/fragment_nav_question"
         tools:layout="@layout/fragment_question">
         <action
             android:id="@+id/action_fragment_question_to_fragment_win"
@@ -29,7 +29,7 @@
     <fragment
         android:id="@+id/fragment_title"
         android:name="com.example.calculationtest.fragment_title"
-        android:label="Home"
+        android:label="@string/fragment_nav_title"
         tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_fragment_title_to_fragment_question"
@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/fragment_win"
         android:name="com.example.calculationtest.fragment_win"
-        android:label="Win"
+        android:label="@string/fragment_nav_win"
         tools:layout="@layout/fragment_win">
         <action
             android:id="@+id/action_fragment_win_to_fragment_title"

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">口算测试</string>
+    <string name="high_score">最高得分:%d</string>
+    <string name="mouse_cal">口算测试</string>
+    <string name="title_start_btn">开始口算</string>
+    <string name="q_now_score">当前得分:%d</string>
+    <string name="q_tv_tips">回答正确!请继续</string>
+    <string name="q_btn_clear">清除</string>
+    <string name="q_btn_submit">提交</string>
+    <string name="lose_fail_msg">测试失败</string>
+    <string name="challenge_score">测试得分:%d</string>
+    <string name="challenge_back">返回</string>
+    <string name="win_message">测试成功</string>
+    <string name="q_tv_u_answer">输入答案:</string>
+    <string name="quit_dialog_title">确定退出?</string>
+    <string name="dialog_positive_message">确定</string>
+    <string name="dialog_negative_message">取消</string>
+    <string name="fragment_nav_title">口算测试</string>
+    <string name="fragment_nav_question">习题</string>
+    <string name="fragment_nav_win">挑战成功</string>
+    <string name="fragment_nav_lose">挑战失败</string>
+</resources>
