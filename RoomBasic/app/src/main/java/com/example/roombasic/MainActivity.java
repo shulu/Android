@@ -1,8 +1,11 @@
 package com.example.roombasic;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.room.Room;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     WordDao wordDao;
     TextView textView;
     Button btnInsert, btnUpdate, btnClear, btnDelete;
-
+    LiveData<List<Word>> listLiveData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,19 @@ public class MainActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
         wordDao = wordDataBase.getWordDao();
+        listLiveData = wordDao.getAllWordsLive();
         textView = findViewById(R.id.textView);
-        updateView();
+        listLiveData.observe(this, new Observer<List<Word>>() {
+            @Override
+            public void onChanged(List<Word> words) {
+                StringBuilder text = new StringBuilder();
+                for (int i = 0; i < words.size(); i++) {
+                    Word word = words.get(i);
+                    text.append(word.getId()).append(":").append(word.getWord()).append("=").append(word.getChineseMeaning()).append("\n");
+                }
+                textView.setText(text.toString());
+            }
+        });
 
         btnInsert = findViewById(R.id.btnInsert);
         btnUpdate = findViewById(R.id.btnUpdate);
@@ -38,15 +52,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Word word = new Word("Hello", "你好！");
                 Word word1 = new Word("World", "世界！");
-                wordDao.insertWords(word, word1);
-                updateView();
+                new InsertAsyncTask(wordDao).execute(word, word1);
             }
         });
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 wordDao.deleteAllWords();
-                updateView();
             }
         });
         btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 Word word = new Word("Hi", "你好啊！");
                 word.setId(9);
                 wordDao.UpdateWords(word);
-                updateView();
             }
         });
         btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -64,18 +75,22 @@ public class MainActivity extends AppCompatActivity {
                 Word word = new Word("", "");
                 word.setId(7);
                 wordDao.deleteWords(word);
-                updateView();
             }
         });
     }
 
-    void updateView() {
-        List<Word> list = wordDao.getAllWords();
-        StringBuilder text = new StringBuilder();
-        for (int i = 0; i < list.size(); i++) {
-            Word word = list.get(i);
-            text.append(word.getId()).append(":").append(word.getWord()).append("=").append(word.getChineseMeaning()+"\n");
+    static class InsertAsyncTask extends AsyncTask<Word, Void, Void>{
+        private final WordDao wordDao;
+
+        InsertAsyncTask(WordDao wordDao) {
+            this.wordDao = wordDao;
         }
-        textView.setText(text.toString());
+
+        @Override
+        protected Void doInBackground(Word... words) {
+            wordDao.insertWords(words);
+            return null;
+        }
     }
+
 }
