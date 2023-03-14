@@ -15,7 +15,7 @@ abstract public class WordDataBase extends RoomDatabase {
     static public WordDataBase getDataBase(Context context){
         if (INSTANCE == null){
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(), WordDataBase.class, "word_database")
-                    .allowMainThreadQueries().build();
+                    .build();
         }
         return INSTANCE;
     }
