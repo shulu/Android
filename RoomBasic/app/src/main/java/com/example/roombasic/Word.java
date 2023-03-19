@@ -12,6 +12,17 @@ public class Word {
 
     @ColumnInfo(name = "english_word")
     private String word;
+    @ColumnInfo(name = "show")
+    private boolean show;
+
+    public boolean isShow() {
+        return show;
+    }
+
+    public void setShow(boolean show) {
+        this.show = show;
+    }
+
     @ColumnInfo(name = "chinese_meaning")
     private String chineseMeaning;
 

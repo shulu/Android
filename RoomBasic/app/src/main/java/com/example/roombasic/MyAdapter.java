@@ -5,6 +5,8 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,9 +18,10 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<Word> allWords = new ArrayList<>();
     boolean useCardView;
-
-    public MyAdapter(boolean useCardView) {
+    WordViewModel wordViewModel;
+    public MyAdapter(boolean useCardView, WordViewModel wordViewModel) {
         this.useCardView = useCardView;
+        this.wordViewModel = wordViewModel;
     }
 
     public void setAllWords(List<Word> allWords) {
@@ -31,9 +34,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View itemView;
         if (useCardView){
-            itemView = layoutInflater.inflate(R.layout.cell_card, parent, false);
+            itemView = layoutInflater.inflate(R.layout.cell_card_switch, parent, false);
         }else{
-            itemView = layoutInflater.inflate(R.layout.cell_normal, parent, false);
+            itemView = layoutInflater.inflate(R.layout.cell_normal_switch, parent, false);
         }
         return new MyViewHolder(itemView);
     }
@@ -44,6 +47,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.textViewNumber.setText(String.valueOf(position + 1));
         holder.textViewEnglish.setText(word.getWord());
         holder.textViewChinese.setText(word.getChineseMeaning());
+        //GONE 不占位 VISIBLE 占位
+        holder.switchShow.setOnCheckedChangeListener(null);
+        if (word.isShow()){
+            holder.textViewChinese.setVisibility(View.GONE);
+            holder.switchShow.setChecked(true);
+        }else{
+            holder.textViewChinese.setVisibility(View.VISIBLE);
+            holder.switchShow.setChecked(false);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,6 +63,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(uri);
                 holder.itemView.getContext().startActivity(intent);
+            }
+        });
+
+        holder.switchShow.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b){
+                    holder.textViewChinese.setVisibility(View.GONE);
+                    word.setShow(true);
+                }else{
+                    holder.textViewChinese.setVisibility(View.VISIBLE);
+                    word.setShow(false);
+                }
+                wordViewModel.updateWords(word);
             }
         });
     }
@@ -62,12 +88,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView textViewNumber,textViewEnglish,textViewChinese;
-
+        Switch switchShow;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewNumber = itemView.findViewById(R.id.tv_num);
             textViewEnglish = itemView.findViewById(R.id.tv_english);
             textViewChinese = itemView.findViewById(R.id.tv_chinese);
+            switchShow = itemView.findViewById(R.id.switch_show);
         }
     }
 }

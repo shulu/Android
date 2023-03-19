@@ -31,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        wordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
         recyclerView = findViewById(R.id.rv);
-        myAdapterNormal = new MyAdapter(false);
-        myAdapterCard = new MyAdapter(true);
+        myAdapterNormal = new MyAdapter(false, wordViewModel);
+        myAdapterCard = new MyAdapter(true, wordViewModel);
 
         aSwitch = findViewById(R.id.aswitch_view);
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -50,15 +51,17 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myAdapterNormal);
 
-        wordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
         wordViewModel.getAllWordLive().observe(this, new Observer<List<Word>>() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onChanged(List<Word> words) {
+                int temp = myAdapterNormal.getItemCount();
                 myAdapterNormal.setAllWords(words);
                 myAdapterCard.setAllWords(words);
-                myAdapterNormal.notifyDataSetChanged();
-                myAdapterCard.notifyDataSetChanged();
+                if (temp != words.size()){
+                    myAdapterNormal.notifyDataSetChanged();
+                    myAdapterCard.notifyDataSetChanged();
+                }
             }
         });
 
