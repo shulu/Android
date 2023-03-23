@@ -3,4 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_word">add word</string>
+    <string name="add_title">添加单词</string>
+    <string name="input_english">请输入单词</string>
+    <string name="input_chinese">请输入释义</string>
+    <string name="add_submit">submit</string>
 </resources>
