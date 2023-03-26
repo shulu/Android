@@ -17,6 +17,10 @@ public class WordRepository {
         allWordLive = wordDao.getAllWordsLive();
     }
 
+    public LiveData<List<Word>> filterWords(String search){
+        return wordDao.filterWords("%"+search+"%");
+    }
+
     public LiveData<List<Word>> getAllWordLive() {
         return allWordLive;
     }

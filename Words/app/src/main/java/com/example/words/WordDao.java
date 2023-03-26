@@ -27,4 +27,7 @@ public interface WordDao {
     @Query("SELECT * FROM WORD ORDER BY ID DESC")
     // List<Word> getAllWords();
     LiveData<List<Word>> getAllWordsLive();
+
+    @Query("SELECT * FROM WORD WHERE english_word LIKE :search ORDER BY ID DESC")
+    LiveData<List<Word>> filterWords(String search);
 }

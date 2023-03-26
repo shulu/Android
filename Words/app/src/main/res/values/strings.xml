@@ -7,4 +7,5 @@
     <string name="input_english">请输入单词</string>
     <string name="input_chinese">请输入释义</string>
     <string name="add_submit">submit</string>
+    <string name="menu_clear">清除数据</string>
 </resources>
